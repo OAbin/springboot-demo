@@ -1,8 +1,8 @@
 # springboot-demo
-springboot常用技术整合
+springboot常用技术整合  
 ##1、mybatis
 * 注解使用mybatis
-* xml使用mybatis
+* xml使用mybatis  
 ##2、redis
 * redistemplate的配置使用
 * redistemplate的多种序列化方案，默认jdk序列化，redisManger查看会不友好。
