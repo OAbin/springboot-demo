@@ -5,8 +5,10 @@ springboot常用技术整合
 * xml使用mybatis  
 ## 2、redis
 * redistemplate的配置使用
-* redistemplate的多种序列化方案，默认jdk序列化，redisManger查看会不友好。
-
+* redistemplate的多种序列化方案，默认jdk序列化，redisManger查看会不友好。  
+## 3、mq  
+* rocketmqTemplate的使用
+* 多种方式发送的消息：同步、异步、顺序、延迟、一次  
 
 # 刨坑之旅
 1、springboot项目的继承与聚合   
