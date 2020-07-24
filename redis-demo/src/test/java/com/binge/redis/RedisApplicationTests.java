@@ -13,6 +13,6 @@ public class RedisApplicationTests {
     private RedisTemplate jacksonRedisTemplate;
 
     @Test public void testSave(){
-        jacksonRedisTemplate.opsForValue().set("test:123", "test123");
+        jacksonRedisTemplate.opsForValue().set("test:234", "test123");
     }
 }
