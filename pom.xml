@@ -19,6 +19,7 @@
     <modules>
         <module>mybatis-demo</module>
         <module>redis-demo</module>
+        <module>mq-demo</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
@@ -31,6 +32,7 @@
         <common-pool.version>2.6.0</common-pool.version>
         <jackson.version>2.10.0</jackson.version>
         <fastjson.version>1.2.51</fastjson.version>
+        <rocketmq.version>2.0.3</rocketmq.version>
     </properties>
 
     <dependencyManagement>
@@ -101,6 +103,13 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <!--rocketmq-->
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocketmq.version}</version>
             </dependency>
 
         </dependencies>
