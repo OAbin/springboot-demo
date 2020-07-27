@@ -1,7 +1,7 @@
 package com.binge.dynamic.datasource.baomidou.mapper;
 
 import com.baomidou.dynamic.datasource.annotation.DS;
-import com.binge.dynamic.datasource.baomidou.constants.DataSourceConstants;
+import com.binge.dynamic.datasource.baomidou.constants.BaomidouConstants;
 import com.binge.dynamic.datasource.model.Order;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -12,9 +12,19 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface OrderProxyMapper {
 
-    @DS(DataSourceConstants.DATASOURCE_ORDER_SLAVE)
+    /**
+     * 从库通过默认的负载均衡--轮训来查询数据
+     * @param id
+     * @return
+     */
+    @DS(BaomidouConstants.DATASOURCE_ORDER_SLAVE)
     Order orderById(@Param("id") Integer id);
 
-    @DS(DataSourceConstants.DATASOURCE_ORDER_MASTER)
+    /**
+     * 主库写入数据
+     * @param order
+     * @return
+     */
+    @DS(BaomidouConstants.DATASOURCE_ORDER_MASTER)
     int save(Order order);
 }

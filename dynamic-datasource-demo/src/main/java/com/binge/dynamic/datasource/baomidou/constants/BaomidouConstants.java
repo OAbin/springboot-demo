@@ -1,6 +1,6 @@
 package com.binge.dynamic.datasource.baomidou.constants;
 
-public class DataSourceConstants {
+public class BaomidouConstants {
 
     public static final String DATASOURCE_USER = "user";
     public static final String DATASOURCE_ORDER = "order";

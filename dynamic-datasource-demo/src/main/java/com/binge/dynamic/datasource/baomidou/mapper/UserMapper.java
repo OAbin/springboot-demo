@@ -1,13 +1,13 @@
 package com.binge.dynamic.datasource.baomidou.mapper;
 
 import com.baomidou.dynamic.datasource.annotation.DS;
-import com.binge.dynamic.datasource.baomidou.constants.DataSourceConstants;
+import com.binge.dynamic.datasource.baomidou.constants.BaomidouConstants;
 import com.binge.dynamic.datasource.model.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@DS(DataSourceConstants.DATASOURCE_USER)
+@DS(BaomidouConstants.DATASOURCE_USER)
 public interface UserMapper {
 
     /**
