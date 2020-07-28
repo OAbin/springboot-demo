@@ -1,19 +1,31 @@
 package com.binge.mybatis;
 
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import com.binge.mybatis.mapper.order.OrderMapper;
+import com.binge.mybatis.mapper.user.UserMapper;
+import com.binge.mybatis.model.Order;
+import com.binge.mybatis.model.User;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootApplication
-@MapperScan(basePackages = "com.binge.baomidou.mapper")
-//添加 @EnableAspectJAutoProxy 注解，重点是配置 exposeProxy = true ，因为我们希望 Spring AOP 能将当前代理对象设置到 AopContext 中。
-// 具体用途，我们会在下文看到。想要提前看的胖友，可以看看 《Spring AOP 通过获取代理对象实现事务切换》 文章。
-// http://www.voidcn.com/article/p-zddcuyii-bpt.html
-@EnableAspectJAutoProxy(exposeProxy = true)
-public class MybatisDynamicDataSourceApplication {
+@SpringBootTest
+public class MybatisDynamicDataSourceApplicationTests {
 
-    public static void main(String[] args) {
-        SpringApplication.run(BmdDynamicDataSourceApplication.class, args);
+
+    @Autowired
+    private UserMapper userMapper;
+    @Autowired
+    private OrderMapper orderMapper;
+
+    @Test public void testSave(){
+        userMapper.save(new User(135, "xiaohong"));
+        orderMapper.save(new Order(135, 135));
+    }
+
+    @Test public void testQuery(){
+        User user = userMapper.userById(135);
+        System.out.println(user);
+        Order order = orderMapper.orderById(135);
+        System.out.println(order);
     }
 }

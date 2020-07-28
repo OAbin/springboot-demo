@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.binge.baomidou.mapper.OrderMapper">
+<mapper namespace="com.binge.mybatis.mapper.order.OrderMapper">
 
     <sql id="FIELDS">
         id, user_id
@@ -13,7 +13,7 @@
         WHERE id = #{id}
     </select>
 
-    <insert id="save" parameterType="com.binge.baomidou.model.Order">
+    <insert id="save" parameterType="com.binge.mybatis.model.Order">
         INSERT INTO t_order
         <trim prefix="(" suffix=")" suffixOverrides=",">
             id, user_id

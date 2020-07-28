@@ -1,4 +1,4 @@
-package com.binge.baomidou.model;
+package com.binge.mybatis.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
