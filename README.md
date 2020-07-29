@@ -31,8 +31,8 @@ springboot常用技术整合
 ## [不开心就来刨坑吧，让你知道什么叫难过。😞]  
 1、springboot项目的继承与聚合   
 2、dependencyManagement和dependencies的区别  
-3、springboot的启动类和测试类必须包名相同  
-4、配置bean方法名必须与注入时使用属性名相同,否则注入无效  
+3、springboot的启动类和测试类必须包名相同，否则要指定启动类    
+4、如果不指定bean name，配置bean方法名必须与注入时使用属性名相同,否则注入无效  
 @Autowired  
     private RedisTemplate jacksonRedisTemplate;  
 @Bean  
