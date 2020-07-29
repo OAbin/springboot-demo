@@ -26,7 +26,8 @@ springboot常用技术整合
 * 分库分表中间件  
   * shardjdbc-demo通过简单的配置即可使用。推荐用这种方式做多数据源方案和读写分离方案。其次是baimidou方案。第二种方式一般情况下不推荐使用。
 
-# 刨坑之旅[刨坑一时爽，一直刨坑一直爽，刨死你。]
+# 刨坑之旅[刨坑一时爽，一直刨坑一直爽。]  
+# [不开心就来刨坑吧，让你知道什么叫难过。😞]  
 1、springboot项目的继承与聚合   
 2、dependencyManagement和dependencies的区别  
 3、springboot的启动类和测试类必须包名相同  
