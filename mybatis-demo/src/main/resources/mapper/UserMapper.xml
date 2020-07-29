@@ -5,7 +5,7 @@
 
     <sql id="BASE_COLUMN">id, name</sql>
 
-    <insert id="save" parameterType="com.binge.mybatis.model.User">
+    <insert id="save" parameterType="com.binge.User">
         INSERT INTO
         <include refid="BASE_TABLE"/>
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -16,7 +16,7 @@
         </trim>
     </insert>
 
-    <select id="allUsers" resultType="com.binge.mybatis.model.User">
+    <select id="allUsers" resultType="com.binge.User">
         SELECT
         <include refid="BASE_COLUMN"/>
         FROM
