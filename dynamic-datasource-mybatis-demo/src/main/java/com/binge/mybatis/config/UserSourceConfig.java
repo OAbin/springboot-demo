@@ -20,7 +20,7 @@ import javax.sql.DataSource;
 public class UserSourceConfig {
 
     /**
-     * 创建 orders 数据源
+     * 创建 user 数据源
      */
     @Bean(name = "userDataSource")
     @ConfigurationProperties(prefix = "spring.datasource.user")

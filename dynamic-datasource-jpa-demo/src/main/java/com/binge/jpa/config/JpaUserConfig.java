@@ -27,7 +27,7 @@ public class JpaUserConfig {
     private Map<String, Object> hibernateVendorProperties;
 
     /**
-     * 创建 orders 数据源
+     * 创建 user 数据源
      */
     @Bean(name = "userDataSource")
     @ConfigurationProperties(prefix = "spring.datasource.user")
