@@ -21,7 +21,7 @@ springboot常用技术整合
     读写分离:如果从库比较多，配置类会比较多，不利于生产实施。相对而言，第一种方案比较优。  
   * jpa-demo  
     jpa的使用，model需要和DataSource关联。要不@Table和@Column注解会报错  
-  *jdbctemplate-demo  
+  * jdbctemplate-demo  
      model需要实现Serializable接口。  
      
     
