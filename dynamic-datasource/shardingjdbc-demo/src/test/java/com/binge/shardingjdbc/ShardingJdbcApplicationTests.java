@@ -17,9 +17,12 @@ public class ShardingJdbcApplicationTests {
     @Autowired
     private OrderMapper orderMapper;
 
+    /**
+     * 测试多数据源读写
+     */
     @Test public void testSave(){
-        userMapper.save(new User(110, "xiaohong"));
-        orderMapper.save(new Order(110, 890));
+        userMapper.save(new User(120, "xiaohong"));
+        orderMapper.save(new Order(120, 890));
     }
 
     @Test public void testQuery(){
@@ -27,6 +30,17 @@ public class ShardingJdbcApplicationTests {
         System.out.println(user);
         Order order = orderMapper.orderById(110);
         System.out.println(order);
+    }
+
+    /**
+     * 注意:需要在application.yaml中放开读写分离配置
+     * 测试读写分离,默认轮训机制
+     */
+    @Test public void testRW(){
+        for (int i = 0; i < 10; i++) {
+            Order order = orderMapper.orderById(1);
+            System.out.println(order);
+        }
     }
 
 }
