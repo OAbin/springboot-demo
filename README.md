@@ -11,10 +11,17 @@ springboot常用技术整合
 * 多种方式发送的消息：同步、异步、顺序、延迟、一次  
 ## 4、多数据源之读写分离  
 * 基于 Spring AbstractRoutingDataSource 做拓展--baomidou实现多数据源  
-  通过DS，注解来实现，参数为数据源名称。  
-  读写分离从库通过下划线分割，默认分割首部为一个数据源组，列如slave_1,slave_2为两个从库，则slave为一个数据源组。  
-  从库默认轮训来做负载均衡。
-* 不同操作类，固定数据源--mybatis实现多数据源、Spring Data JPA 多数据源、 JdbcTemplate 多数据源    
+  * baomidou-demo:  
+    通过DS，注解来实现，参数为数据源名称。  
+    读写分离从库通过下划线分割，默认分割首部为一个数据源组，列如slave_1,slave_2为两个从库，则slave为一个数据源组。  
+    从库默认轮训来做负载均衡。
+* 不同操作类，固定数据源--mybatis实现多数据源、Spring Data JPA 多数据源、 JdbcTemplate 多数据源  
+  * mybatis-demo:  
+    通过配置不同的sqlSessionTemplate来实现。  
+    读写分离:如果从库比较多，配置类会比较多，不利于生产实施。相对而言，第一种方案比较优。  
+  * jpa-demo  
+    
+      
 * 分库分表中间件  
 
 # 刨坑之旅
@@ -25,4 +32,5 @@ springboot常用技术整合
 @Autowired  
     private RedisTemplate jacksonRedisTemplate;  
 @Bean  
-    public RedisTemplate<String, Object> jacksonRedisTemplate(RedisConnectionFactory factory) 
+    public RedisTemplate<String, Object> jacksonRedisTemplate(RedisConnectionFactory factory)  
+5、jpa要配置表名、dao层接口方法命名要规范。列如根据id查询只能是findById，不能是userById.
