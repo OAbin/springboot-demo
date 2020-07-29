@@ -16,6 +16,7 @@
         <module>jdbctemplate-demo</module>
         <module>jpa-demo</module>
         <module>ibatis-demo</module>
+        <module>shardingjdbc-demo</module>
     </modules>
 
 

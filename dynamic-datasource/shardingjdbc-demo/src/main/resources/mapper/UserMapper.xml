@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.binge.shardingjdbc.mapper.UserMapper">
+
+    <sql id="FIELDS">
+        id, name
+    </sql>
+
+    <select id="userById" parameterType="Integer" resultType="User">
+        SELECT
+        <include refid="FIELDS" />
+        FROM t_user
+        WHERE id = #{id}
+    </select>
+
+    <insert id="save" parameterType="com.binge.shardingjdbc.model.User">
+        INSERT INTO t_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            id, name
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{id, jdbcType=INTEGER},#{name , jdbcType=VARCHAR}
+        </trim>
+    </insert>
+
+</mapper>

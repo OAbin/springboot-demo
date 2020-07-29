@@ -20,12 +20,7 @@
         <module>mybatis-demo</module>
         <module>redis-demo</module>
         <module>mq-demo</module>
-        <module>dynamic-datasource-bmd-demo</module>
-        <module>dynamic-datasource-mybatis-demo</module>
-        <module>dynamic-datasource-jpa-demo</module>
-        <module>dynamic-datasource-jdbctemplate-demo</module>
         <module>dynamic-datasource</module>
-        <module>bmd-demo</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
@@ -42,6 +37,7 @@
         <jdbc.version>2.2.5.RELEASE</jdbc.version>
         <dynamic.datasource.version>2.5.7</dynamic.datasource.version>
         <actuator.version>2.3.1.RELEASE</actuator.version>
+        <sharding-jdbc.version>4.1.0</sharding-jdbc.version>
     </properties>
 
     <dependencyManagement>
@@ -137,6 +133,15 @@
                 <artifactId>spring-boot-actuator</artifactId>
                 <version>${actuator.version}</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.shardingsphere/sharding-jdbc-spring-boot-starter -->
+            <!--sharding-jdbc-->
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${sharding-jdbc.version}</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

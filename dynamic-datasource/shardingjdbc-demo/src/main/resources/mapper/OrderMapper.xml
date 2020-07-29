@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.binge.shardingjdbc.mapper.OrderMapper">
+
+    <sql id="FIELDS">
+        id, user_id
+    </sql>
+
+    <select id="orderById" parameterType="Integer" resultType="Order">
+        SELECT
+        <include refid="FIELDS" />
+        FROM t_order
+        WHERE id = #{id}
+    </select>
+
+    <insert id="save" parameterType="com.binge.shardingjdbc.model.Order">
+        INSERT INTO t_order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            id, user_id
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{id, jdbcType=INTEGER},#{userId, jdbcType=INTEGER}
+        </trim>
+    </insert>
+
+</mapper>

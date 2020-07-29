@@ -23,12 +23,10 @@ springboot常用技术整合
     jpa的使用，model需要和DataSource关联。要不@Table和@Column注解会报错  
   * jdbctemplate-demo  
      model需要实现Serializable接口。  
-     
-    
-      
 * 分库分表中间件  
+  * shardjdbc-demo通过简单的配置即可使用。推荐用这种方式做多数据源方案和读写分离方案。其次是baimidou方案。第二种方式一般情况下不推荐使用。
 
-# 刨坑之旅
+# 刨坑之旅[刨坑一时爽，一直刨坑一直爽，刨死你。]
 1、springboot项目的继承与聚合   
 2、dependencyManagement和dependencies的区别  
 3、springboot的启动类和测试类必须包名相同  
@@ -37,4 +35,5 @@ springboot常用技术整合
     private RedisTemplate jacksonRedisTemplate;  
 @Bean  
     public RedisTemplate<String, Object> jacksonRedisTemplate(RedisConnectionFactory factory)  
-5、jpa要配置表名、dao层接口方法命名要规范。列如根据id查询只能是findById，不能是userById.
+5、jpa要配置表名、dao层接口方法命名要规范。列如根据id查询只能是findById，不能是userById.  
+6、shardingjdbc在application.yaml中配置tables时，要注意，tables属性要与表名严格一致。
