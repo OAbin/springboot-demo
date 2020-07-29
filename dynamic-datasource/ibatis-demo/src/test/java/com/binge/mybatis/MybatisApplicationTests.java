@@ -17,6 +17,9 @@ public class MybatisApplicationTests {
     @Autowired
     private OrderMapper orderMapper;
 
+    /**
+     * 测试多数据源读写
+     */
     @Test public void testSave(){
         userMapper.save(new User(135, "xiaohong"));
         orderMapper.save(new Order(135, 135));

@@ -17,6 +17,9 @@ public class JdbcTemplateApplicationTests {
     private OrderDao orderDao;
 
 
+    /**
+     * 测试多数据源读写
+     */
     @Test public void testSave(){
         userDao.save("insert into t_user(id, name) values(?, ?)", new User(789, "xiaohong"));
         orderDao.save("insert into t_order(id, user_id) values(?, ?)", new Order(789, 789));

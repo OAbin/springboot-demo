@@ -19,6 +19,9 @@ public class JpaApplicationTests {
 
 
 
+    /**
+     * 测试多数据源读写
+     */
     @Test public void testSave(){
         userRepository.save(new User(678, "xiaohong"));
         orderRepository.save(new Order(678, 456));
