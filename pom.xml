@@ -34,7 +34,7 @@
         <redis.version>2.2.4.RELEASE</redis.version>
         <common-pool.version>2.6.0</common-pool.version>
         <jackson.version>2.10.0</jackson.version>
-        <fastjson.version>1.2.51</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <rocketmq.version>2.0.3</rocketmq.version>
         <jdbc.version>2.2.5.RELEASE</jdbc.version>
         <dynamic.datasource.version>2.5.7</dynamic.datasource.version>
