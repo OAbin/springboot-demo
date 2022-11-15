@@ -33,7 +33,7 @@
         <mysql.version>8.0.16</mysql.version>
         <redis.version>2.2.4.RELEASE</redis.version>
         <common-pool.version>2.6.0</common-pool.version>
-        <jackson.version>2.10.0</jackson.version>
+        <jackson.version>2.12.7.1</jackson.version>
         <fastjson.version>1.2.51</fastjson.version>
         <rocketmq.version>2.0.3</rocketmq.version>
         <jdbc.version>2.2.5.RELEASE</jdbc.version>
